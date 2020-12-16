@@ -5,7 +5,9 @@ ruby '2.6.3'
 
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 
+gem 'devise'
 
+gem 'twitter-bootstrap-rails'
 
 gem 'puma', '~> 4.1'
 
