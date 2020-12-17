@@ -32,11 +32,27 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="container-fluid">
+          <% flash.each do |name, msg| %>
+            <% if msg.is_a?(String) %>
+              <div class="mt-3 alert alert-<%= flash_class_name(name) %>" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
+                  <span class="sr-only"><%= t('global.error.close') %>'</span>
+                </button>
+                <%= content_tag :div, msg, :id => "flash_#{name}" %>
+              </div>
+            <% end %>
+          <% end %>
+
+          <div class="wrapper">
+          <%= yield %>
+          </div>
+        <!-- <div class="col-lg-12">
           <%= bootstrap_flash %>
           <%= yield %>
-        </div>
+        </div> -->
       </div><!--/row-->
+
 
       <footer>
         <p>&copy; Company 2020</p>
