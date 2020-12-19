@@ -92,8 +92,10 @@ ru:
           calling: 'Зовёт:'
           will_go: 'Пойдут:'
           i_will_go: 'Я пойду:'
+          confirm: 'Вы уверены?'
         button:
           change: 'Изменить'
+          destroy: 'Удалить мероприятие'
       edit:
         static:
           name: 'Редактирование события'
@@ -143,7 +145,7 @@ ru:
       session:
         static:
           name: 'Вход'
-          
+
   error:
     one: '%{count} ошибка'
     few: '%{count} ошибки'
