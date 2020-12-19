@@ -1,0 +1,150 @@
+ru:
+  activerecord:
+    models:
+      user: 'Пользователь'
+      event: 'Событие'
+
+    # Перевод названий аттрибутов моделей
+    attributes:
+      user:
+        email: 'Почта'
+        name: 'Имя'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+      event:
+        title: 'Название'
+        address: 'Место проведения'
+        datetime: 'Дата и время'
+        description: 'Описание'
+
+  # Перевод сообщений, которые отправляет контроллер
+  controllers:
+    events:
+      created: 'Вы создали новое мероприятие'
+      updated: 'Вы обновили мероприятие'
+      destroyed: 'Вы удалили мероприятие'
+    users:
+      updated: 'Вы обновили свой профиль'
+
+  # Глобальные
+  global:
+    language: 'Язык'
+    confirm:
+      consent: 'Вы уверены, что хотите удалить это событие?'
+      warning: "При нажатии на 'Да' вы не сможете вернуть обратно данное событие"
+      ok: 'Да'
+      cancel: 'Отмена'
+    error:
+      close: 'Закрыть'
+      email_exists: 'Пользователь с такой почтой уже существует'
+      event_of_subscriber: 'Вы не можете подписываться на свои события'
+    forms:
+      or: 'или'
+      ready: 'Готово'
+      save: 'Сохранить'
+      back: 'вернуться'
+      subscribe: 'Подписаться'
+      login: 'Войти'
+      delete: 'Удалить'
+      forget_password: 'Забыли пароль?'
+      change_password: 'Сменить пароль'
+      placeholder:
+        email: 'Почта'
+        name: 'Имя'
+        body_comment: 'Ваш комментарий'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+        new_password: 'Новый пароль'
+        new_password_confirmation: 'Подтверждение нового пароля'
+        p_s_condition: 'Не менее %{count} символов'
+
+  # Вьюхи views.layout.button.profile
+  views:
+    layout:
+      button:
+        sign_in: 'Войти'
+        sign_up: 'Зарегистрироваться'
+        profile: 'Профиль'
+        sign_out: 'Выйти'
+      app:
+        name: 'Шашлыки'
+        company: 'Андрес Петерсон'
+
+    user:
+      show:
+        button:
+          edit_profile: 'Редактировать профиль'
+        static:
+          orgonized: 'Организовал'
+          nothing_orgonized: 'пока не организовал ни одного события'
+      edit:
+        static:
+          name: 'Редактирование профиля'
+
+    events:
+      index:
+        static:
+          name: 'События'
+        button:
+          create: 'Создать событие'
+      show:
+        static:
+          calling: 'Зовёт:'
+          will_go: 'Пойдут:'
+          i_will_go: 'Я пойду:'
+        button:
+          change: 'Изменить'
+      edit:
+        static:
+          name: 'Редактирование события'
+      new:
+        static:
+          name: 'Новое событие'
+
+    comments:
+      create:
+        created: 'Ваш комментарий добавлен'
+        not_created: "Вы не можете добавить комментарий"
+      destroy:
+        destroyed: 'Ваш комментарий удалён'
+        not_destroyed: "Вы не можете удалить комментарий"
+      confirm:
+        consent: 'Вы уверены, что хотите удалить комментарий?'
+
+    subscriptions:
+      create:
+        created: 'Подписка на событие оформлена'
+        not_created: "Вы не можете отписаться от этого события"
+      destroy:
+        destroyed: 'Подписка отменена'
+        not_destroyed: "Вы не можете отменить подписку"
+      confirm:
+        consent: 'Уверены, что хотите отменить подписку?'
+
+    devise:
+      password:
+        new:
+          static:
+            name: 'Забыли пароль?'
+          button:
+            reestablish: 'Восстановить'
+      registration:
+        new:
+          static:
+            name: 'Регистрация'
+            account?: 'Уже есть аккаунт?'
+        edit:
+          static:
+            name: 'Редактирование аккаунта'
+            delete_account: 'Хотите удалить ваш аккаунт?'
+            confirm:
+              consent: 'Вы уверены, что хотите удалить аккаунт?'
+              warning: "При нажатии на 'Да' вы не сможете вернуть обратно ваш аккаунт"
+      session:
+        static:
+          name: 'Вход'
+          
+  error:
+    one: '%{count} ошибка'
+    few: '%{count} ошибки'
+    many: '%{count} ошибок'

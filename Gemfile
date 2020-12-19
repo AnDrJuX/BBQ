@@ -7,6 +7,10 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 
 gem 'devise'
 
+gem 'devise-i18n'
+
+gem 'rails-i18n'
+
 gem 'twitter-bootstrap-rails'
 
 gem 'puma', '~> 4.1'
