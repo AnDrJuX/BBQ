@@ -18,7 +18,7 @@ class Subscription < ApplicationRecord
   validate :check_email_for_exists_register_user?
 
   def check_email_for_exists_register_user?
-    if user_id.blank? && user_email.present? &&  User.where("email LIKE ?", user_email).present?
+    if User.exists?("email LIKE ?", user_email)
        errors.add(:email, I18n.t('global.error.email_exists'))
     end
   end
