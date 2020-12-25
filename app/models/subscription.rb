@@ -15,13 +15,10 @@ class Subscription < ApplicationRecord
   validates :user, uniqueness: {scope: :event_id}, if: -> { user.present? }
 
   # Или один email может использоваться только один раз (если анонимная подписка)
-  validate :check_email_for_exists_register_user?
 
-  def check_email_for_exists_register_user?
-    if User.exists?("email LIKE ?", user_email)
-       errors.add(:email, I18n.t('global.error.email_exists'))
-    end
-  end
+  validates :user_email, uniqueness: {scope: :event_id},
+  exclusion: { in: User.pluck(:email), message: I18n.t('global.error.email_exists') },
+  unless: -> { user.present? }
 
   # Если есть юзер, выдаем его имя,
   # если нет – дергаем исходный метод
