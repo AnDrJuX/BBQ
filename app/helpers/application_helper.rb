@@ -1,6 +1,43 @@
 module ApplicationHelper
+  # Если у пользователя есть собственный аватар, то показываем его,
+  # иначе — стандартную иконку.
   def user_avatar(user)
-    asset_pack_path('media/images/08.png')
+    if user.avatar?
+      user.avatar.url
+    else
+      asset_pack_path('media/images/08.png')
+    end
+  end
+
+  def user_avatar_thumb(user)
+    if user.avatar.file.present?
+      user.avatar.thumb.url
+    else
+      asset_pack_path('media/images/08.png')
+    end
+  end
+
+  # Возвращает адрес рандомной фотки события, если есть хотя бы одна
+  # Или ссылку на картинку по умолчанию
+  def event_photo(event)
+    photos = event.photos.persisted
+
+    if photos.any?
+      photos.sample.photo.url
+    else
+      asset_pack_path('media/images/08.png')
+    end
+  end
+
+  # Возвращает миниатюрную версию фотки
+  def event_thumb(event)
+    photos = event.photos.persisted
+
+    if photos.any?
+      photos.sample.photo.thumb.url
+    else
+      asset_pack_path('media/images/08.png')
+    end
   end
 
   def flash_class_name(name)
