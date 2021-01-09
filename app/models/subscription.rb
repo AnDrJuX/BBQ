@@ -20,12 +20,6 @@ class Subscription < ApplicationRecord
 
   validate :check_email_for_subs, unless: -> { user.present? }
 
-  def check_email_for_subs
-    if User.exists?(email: user_email)
-      errors.add(:email, 'данный email уже занят')
-    end
-  end
-
   # Если есть юзер, выдаем его имя,
   # если нет – дергаем исходный метод
   def user_name
@@ -43,6 +37,14 @@ class Subscription < ApplicationRecord
       user.email
     else
       super
+    end
+  end
+
+  private
+
+  def check_email_for_subs
+    if User.exists?(email: user_email)
+      errors.add(:email, 'данный email уже занят')
     end
   end
 end
