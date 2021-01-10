@@ -19,7 +19,9 @@ ru:
         datetime: 'Дата и время'
         description: 'Описание'
       photo:
-        photo: 'Фотография'  
+        photo: 'Фотография'          
+      subscription:
+        this_email_is_already_taken: 'данный email уже занят'
 
   # Перевод сообщений, которые отправляет контроллер
   controllers:

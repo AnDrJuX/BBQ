@@ -44,7 +44,7 @@ class Subscription < ApplicationRecord
 
   def check_email_for_subs
     if User.exists?(email: user_email)
-      errors.add(:email, 'данный email уже занят')
+      errors.add(:email, I18n.t('activerecord.attributes.subscription.this_email_is_already_taken'))
     end
   end
 end
