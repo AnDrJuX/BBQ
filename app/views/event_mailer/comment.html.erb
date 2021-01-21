@@ -1,14 +1,18 @@
-<h1><%= t '.title' %></h1>
+<h1><%= t 'views.event_mailer.comment.title' %></h1>
 <p><%= @comment.body %></p>
-<p><%= t '.author' %>: <strong><%= @comment.user_name %></strong></p>
+<p><%= t 'views.event_mailer.comment.author' %>: <strong><%= @comment.user_name %></strong></p>
 
 <hr/>
 
-<%= t '.event' %>
-<h3><%= @event.title %></h3>
+<%= t 'views.event_mailer.comment.event' %>
+<h3><%= link_to @event.title, url_for(
+    controller: 'events',
+    action: 'show',
+    id: @event,
+    massage: 'event') %> </h3>
 
-<%= t '.datetime' %>
+<%= t 'views.event_mailer.comment.datetime' %>
 <h4><%= l @event.datetime %></h4>
 
-<%= t '.owner' %>
+<%= t 'views.event_mailer.comment.owner' %>
 <h4><%= @event.user.name %></h4>

@@ -120,17 +120,8 @@ Rails.application.configure do
   # Делать рассылку писем (при false приложение только имитирует отправку)
   config.action_mailer.perform_deliveries = true
 
-  # Устанавливаем протокол, по которому отправлять (SMTP)
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :mailjet
 
-  # А это для SendGrid
-  ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
-    :port           => '587',
-    :authentication => :plain,
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'heroku.com',
-    :enable_starttls_auto => true
-  }
+  config.action_controller.asset_host = "http://shashliq.herokuapp.com"
+config.action_mailer.asset_host = "http://shashliq.herokuapp.com"
 end

@@ -192,3 +192,9 @@ ru:
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
+    photo:
+      subject: 'Новое фото   @%{title}'
+    subscription:
+      subject: 'Новая подписка на   @%{title}'
+    comment:
+      subject: 'Новый комментарий   @%{title}'

@@ -1,11 +1,11 @@
-Новая подписка
+<%= t 'views.event_mailer.subscription.title' %>
 ----
 
-Имя: <%= @name %>
-Email: <%=  @email %>
+<%= t 'views.event_mailer.subscription.author' %>: <%= @name %>
+<%= t 'views.event_mailer.subscription.email' %>: <%=  @email %>
 
 ----------------------
 
-Событие: <%= @event.title %>
-Состоится: <%= l @event.datetime %>
-Организатор: <%= @event.user.name %>
+<%= t 'views.event_mailer.subscription.event' %>: <%= @event.title %>
+<%= t 'views.event_mailer.subscription.datetime' %>: <%= l @event.datetime %>
+<%= t 'views.event_mailer.subscription.owner' %>: <%= @event.user.name %>

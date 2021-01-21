@@ -62,12 +62,8 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: '587',
-    user_name: 'pertesonandres@gmail.com', # не используйте для тестов свои реальные ящики
-    password: '28nosetrep',
-    authentication: 'plain',
-    enable_starttls_auto: true
-  }
+  config.action_mailer.delivery_method = :mailjet
+
+  config.action_controller.asset_host = "http://localhost:3000"
+  config.action_mailer.asset_host = "http://localhost:3000"
 end

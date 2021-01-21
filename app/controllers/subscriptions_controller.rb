@@ -15,6 +15,7 @@ class SubscriptionsController < ApplicationController
       # Пишем название класса, потом метода и передаём параметры
       # И доставляем методом .deliver_now (то есть в этом же потоке)
       EventMailer.subscription(@event, @new_subscription).deliver_now
+      # EventMailer.send_email(email: msg.email, subject: msg.subject, body: msg.body).deliver_later
       # Если сохранилась, редиректим на страницу самого события
       redirect_to @event, notice: I18n.t('controllers.subscriptions.created')
     else
